@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
+
+  --color-paper: #f5fbf9;
+  --color-paper-soft: #e6f5ef;
+
+  --color-navy: #0f2a3d;
+  --color-navy-soft: #4c6473;
+
+  --color-brand: #12a883;
+  --color-brand-dark: #0b7a5c;
+  --color-brand-light: #34d9a6;
+  --color-brand-mid: #14b892;
+
+  --color-navy-dark: #0b1f2e;
+  --color-navy-card: #122e42;
+  --color-navy-card-2: #17394f;
+
+  --color-accent-blue: #3b82f6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  color: var(--color-navy);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+}
