@@ -2,7 +2,7 @@
 import DownloadButtons from './DownloadButtons.vue'
 import ChatScreenMock from './mockups/ChatScreenMock.vue'
 
-const highlights = ['Hecho para Perú', 'Integración con Yape/Plin', 'Código abierto']
+const highlights = ['Hecho para Perú', 'Integración con Yape/Plin', 'IA en tiempo real']
 </script>
 
 <template>

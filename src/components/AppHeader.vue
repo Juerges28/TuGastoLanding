@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import AppLogo from './AppLogo.vue'
 import Icon from './icons/Icon.vue'
-import { GITHUB_RELEASE_URL } from '../constants'
+import { APK_DOWNLOAD_URL } from '../constants'
 
 const open = ref(false)
 
@@ -38,9 +38,7 @@ function closeMenu() {
       </nav>
 
       <a
-        :href="GITHUB_RELEASE_URL"
-        target="_blank"
-        rel="noopener noreferrer"
+        :href="APK_DOWNLOAD_URL"
         class="hidden items-center gap-2 rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-dark md:inline-flex"
       >
         <Icon name="download" class="h-4 w-4" />
@@ -68,9 +66,7 @@ function closeMenu() {
           {{ link.label }}
         </a>
         <a
-          :href="GITHUB_RELEASE_URL"
-          target="_blank"
-          rel="noopener noreferrer"
+          :href="APK_DOWNLOAD_URL"
           class="flex items-center justify-center gap-2 rounded-full bg-brand px-5 py-2.5 text-center text-sm font-semibold text-white"
           @click="closeMenu"
         >

@@ -3,13 +3,13 @@ import Icon from './icons/Icon.vue'
 
 const free = [
   'Registro conversacional ilimitado',
-  'Detección de Yape/Plin vía Gmail',
   'Dashboard con gráficos semanales y mensuales',
   'Categorización automática con IA',
 ]
 
 const pro = [
   'Todo lo del plan Freemium',
+  'Detección de Yape/Plin vía Gmail',
   'Proyección de gastos a fin de mes',
   'Metas de ahorro con seguimiento',
   'Alertas y observaciones generadas por IA',

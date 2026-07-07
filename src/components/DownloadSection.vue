@@ -8,8 +8,8 @@ import DownloadButtons from './DownloadButtons.vue'
       Pruébala ahora mismo
     </h2>
     <p class="mx-auto mt-4 max-w-xl text-navy-soft">
-      Publicamos cada versión como GitHub Release, sin esperar aprobación de
-      tienda. Descarga el APK más reciente e instálalo en tu Android.
+      Publicamos cada nueva versión para que la descargues e instales al
+      instante, sin esperar aprobación de tienda.
     </p>
     <div class="mt-8 flex justify-center">
       <DownloadButtons />
