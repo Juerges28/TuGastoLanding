@@ -1,0 +1,7 @@
+{
+  "routes": [
+    { "src": "/privacidad", "dest": "/privacidad.html" },
+    { "src": "/terminos",   "dest": "/terminos.html"   },
+    { "src": "/(.*)",       "dest": "/index.html"      }
+  ]
+}

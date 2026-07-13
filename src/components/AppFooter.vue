@@ -23,6 +23,14 @@ const team = ['Escobedo Ocaña, Jorge Luis', 'Gordillo Mendoza, Jose Alonzo', 'R
             <li v-for="member in team" :key="member">{{ member }}</li>
           </ul>
         </div>
+
+        <div class="text-sm">
+          <p class="font-semibold text-white">Legal</p>
+          <ul class="mt-3 space-y-1">
+            <li><a href="/privacidad" class="transition hover:text-white">Política de Privacidad</a></li>
+            <li><a href="/terminos" class="transition hover:text-white">Términos de Servicio</a></li>
+          </ul>
+        </div>
       </div>
 
       <div class="mt-10 border-t border-white/10 pt-6 text-xs">

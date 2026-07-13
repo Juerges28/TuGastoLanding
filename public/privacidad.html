@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — TuGasto</title>
+  <meta name="description" content="Política de privacidad de TuGasto. Conoce cómo manejamos tus datos financieros." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --paper:       #f5fbf9;
+      --paper-soft:  #e6f5ef;
+      --navy:        #0f2a3d;
+      --navy-soft:   #4c6473;
+      --navy-dark:   #0b1f2e;
+      --brand:       #12a883;
+      --brand-dark:  #0b7a5c;
+      --brand-mid:   #14b892;
+      --brand-light: #34d9a6;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--paper);
+      color: var(--navy);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+
+    /* ── Header ── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245,251,249,.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .logo-text { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--navy); }
+    .logo-text span { color: var(--brand-mid); }
+    .back-link {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--brand);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+    .back-link:hover { color: var(--brand-dark); }
+
+    /* ── Hero banner ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #0d3550 100%);
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: rgba(52,217,166,.12);
+      filter: blur(60px);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(18,168,131,.15);
+      border: 1px solid rgba(18,168,131,.3);
+      border-radius: 999px;
+      padding: 4px 14px;
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--brand-light);
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .hero p {
+      color: rgba(255,255,255,.6);
+      font-size: .95rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ── Content ── */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    .toc {
+      background: var(--paper-soft);
+      border-left: 3px solid var(--brand);
+      border-radius: 0 12px 12px 0;
+      padding: 20px 24px;
+      margin-bottom: 48px;
+    }
+    .toc p {
+      font-size: .8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--brand-dark);
+      margin-bottom: 10px;
+    }
+    .toc ol {
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .toc a {
+      color: var(--navy-soft);
+      font-size: .88rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .toc a:hover { color: var(--brand); }
+
+    .section { margin-bottom: 48px; }
+    .section:target h2 { color: var(--brand-dark); }
+
+    .section h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      background: var(--brand);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .section p { color: var(--navy-soft); margin-bottom: 12px; font-size: .95rem; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .section ul, .section ol {
+      padding-left: 20px;
+      color: var(--navy-soft);
+      font-size: .95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .highlight-box {
+      background: var(--paper-soft);
+      border: 1px solid rgba(18,168,131,.2);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin: 14px 0;
+    }
+    .highlight-box p { margin: 0; }
+
+    .google-box {
+      background: #fff;
+      border: 1.5px solid rgba(18,168,131,.35);
+      border-radius: 12px;
+      padding: 20px 22px;
+      margin: 14px 0;
+    }
+    .google-box .g-title {
+      font-weight: 700;
+      font-size: .85rem;
+      color: var(--brand-dark);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+    .google-box p { margin: 0; font-size: .9rem; }
+    .google-box ul { margin-top: 8px; }
+
+    .divider { height: 1px; background: rgba(0,0,0,.07); margin: 48px 0; }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy-dark);
+      padding: 40px 24px;
+      text-align: center;
+      color: rgba(255,255,255,.5);
+      font-size: .82rem;
+    }
+    .footer .footer-logo { margin-bottom: 12px; display: inline-block; }
+    .footer a { color: var(--brand-light); text-decoration: none; }
+    .footer a:hover { text-decoration: underline; }
+    .footer .links { display: flex; justify-content: center; gap: 24px; margin: 14px 0; flex-wrap: wrap; }
+
+    @media (max-width: 600px) {
+      .hero { padding: 48px 20px 40px; }
+      .content { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="/" class="logo">
+      <svg viewBox="0 0 64 64" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#34D9A6"/>
+            <stop offset="1" stop-color="#0E7C63"/>
+          </linearGradient>
+        </defs>
+        <path d="M14 10h36a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8H30l-10 8v-8h-6a8 8 0 0 1-8-8V18a8 8 0 0 1 8-8z" fill="url(#lg)"/>
+        <path d="M22 26h16M22 33h11" stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+        <path d="M37 40l4-8 4 5 6-10" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="logo-text"><span>Tu</span>Gasto</span>
+    </a>
+    <a href="/" class="back-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      Volver al inicio
+    </a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-badge">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Privacidad y datos
+  </div>
+  <h1>Política de Privacidad</h1>
+  <p>Última actualización: 13 de julio de 2026</p>
+</section>
+
+<!-- Content -->
+<main class="content">
+
+  <!-- Índice -->
+  <nav class="toc">
+    <p>Contenido</p>
+    <ol>
+      <li><a href="#s1">Información que recopilamos</a></li>
+      <li><a href="#s2">Cómo usamos tu información</a></li>
+      <li><a href="#s3">Uso de datos de Google (Gmail)</a></li>
+      <li><a href="#s4">Almacenamiento en la nube</a></li>
+      <li><a href="#s5">Compartir datos con terceros</a></li>
+      <li><a href="#s6">Seguridad</a></li>
+      <li><a href="#s7">Tus derechos y control de datos</a></li>
+      <li><a href="#s8">Menores de edad</a></li>
+      <li><a href="#s9">Cambios a esta política</a></li>
+      <li><a href="#s10">Contacto</a></li>
+    </ol>
+  </nav>
+
+  <div class="highlight-box">
+    <p>TuGasto es una aplicación de registro de gastos personales desarrollada como proyecto académico en la Universidad Nacional de San Agustín (Arequipa, Perú). Esta política explica qué datos recopilamos, cómo los usamos y cómo los protegemos. Nos comprometemos a manejar tu información de forma responsable y transparente.</p>
+  </div>
+
+  <!-- 1 -->
+  <div class="section" id="s1">
+    <h2><span class="num">1</span> Información que recopilamos</h2>
+
+    <p><strong>Datos que permanecen en tu dispositivo (sin salir de él):</strong></p>
+    <ul>
+      <li>Registros de gastos e ingresos que introduces manualmente o por voz de texto.</li>
+      <li>Categorías y presupuestos que configures.</li>
+      <li>PIN de seguridad (almacenado en cifrado local, nunca en texto plano).</li>
+      <li>Preferencias de la app (biométrico, tema, notificaciones).</li>
+    </ul>
+
+    <p style="margin-top:14px;"><strong>Datos que recopilamos si conectas tu cuenta Google:</strong></p>
+    <ul>
+      <li>Dirección de correo electrónico de tu cuenta Gmail (para identificar la sesión).</li>
+      <li>Contenido de correos de notificación de Yape / Plin (únicamente los necesarios para detectar pagos recibidos).</li>
+    </ul>
+
+    <p style="margin-top:14px;"><strong>Datos procesados por inteligencia artificial (Groq):</strong></p>
+    <ul>
+      <li>El texto que escribes para registrar un gasto se envía a la API de Groq para extraer el monto y la categoría. Groq no retiene este texto de forma permanente como dato tuyo.</li>
+    </ul>
+
+    <p style="margin-top:14px;"><strong>No recopilamos:</strong></p>
+    <ul>
+      <li>Datos de geolocalización.</li>
+      <li>Información bancaria, números de tarjeta ni credenciales financieras.</li>
+      <li>Contactos del dispositivo.</li>
+      <li>Datos de uso para publicidad.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 2 -->
+  <div class="section" id="s2">
+    <h2><span class="num">2</span> Cómo usamos tu información</h2>
+    <ul>
+      <li>Mostrar tu historial de gastos y gráficas de análisis dentro de la app.</li>
+      <li>Categorizar automáticamente tus gastos mediante IA (Groq).</li>
+      <li>Detectar pagos de Yape / Plin en tu Gmail y registrarlos automáticamente (solo si activas esta función).</li>
+      <li>Sincronizar tus transacciones en la nube (Supabase) para que puedas restaurarlas si cambias de dispositivo (solo si creas una cuenta en la app).</li>
+      <li>Enviarte notificaciones locales de recordatorio si las activas.</li>
+    </ul>
+    <p>No usamos tu información para publicidad, marketing ni la vendemos a terceros.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 3 -->
+  <div class="section" id="s3">
+    <h2><span class="num">3</span> Uso de datos de Google (Gmail)</h2>
+
+    <div class="google-box">
+      <div class="g-title">Cumplimiento de la Política de Datos de Usuario de los Servicios de API de Google</div>
+      <p>El uso que hace TuGasto de la información recibida de las API de Google cumple con la <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Política de Datos de Usuario de los Servicios de API de Google</a>, incluidos los requisitos de Uso Limitado.</p>
+    </div>
+
+    <p>Cuando el usuario concede acceso a su cuenta Gmail, TuGasto solicita el permiso <code>gmail.readonly</code> con las siguientes finalidades exclusivas:</p>
+    <ul>
+      <li>Leer correos de notificación enviados por Yape (<em>notificaciones@yape.com.pe</em>) y Plin para detectar montos de pagos recibidos.</li>
+      <li>Registrar automáticamente esas transacciones en el historial de la app.</li>
+    </ul>
+
+    <p style="margin-top:12px;"><strong>Lo que NO hacemos con tus datos de Gmail:</strong></p>
+    <ul>
+      <li>No leemos correos que no sean de Yape / Plin.</li>
+      <li>No almacenamos el contenido de tus correos en ningún servidor externo.</li>
+      <li>No usamos los datos de Gmail para publicidad ni los compartimos con terceros.</li>
+      <li>No transferimos datos de Gmail para que otros los usen.</li>
+      <li>No permitimos que humanos lean tus correos de Gmail, salvo que seas tú quien lo solicite expresamente para soporte técnico.</li>
+    </ul>
+
+    <p style="margin-top:12px;">Puedes revocar el acceso de TuGasto a tu cuenta Google en cualquier momento desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 4 -->
+  <div class="section" id="s4">
+    <h2><span class="num">4</span> Almacenamiento en la nube</h2>
+    <p>Si creas una cuenta opcional en TuGasto, tus transacciones se respaldan cifradas en tránsito en <strong>Supabase</strong> (proveedor de base de datos con servidores en AWS, región us-east-1). Supabase actúa como encargado del tratamiento bajo las instrucciones de TuGasto.</p>
+    <p>No estás obligado a crear cuenta. Puedes usar TuGasto completamente sin conexión: todos los datos se guardan en la base de datos local de tu dispositivo (Room / SQLite).</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 5 -->
+  <div class="section" id="s5">
+    <h2><span class="num">5</span> Compartir datos con terceros</h2>
+    <p>TuGasto <strong>no vende ni alquila</strong> tu información personal. Compartimos datos únicamente con los siguientes proveedores de servicios técnicos, estrictamente para operar la app:</p>
+    <ul>
+      <li><strong>Groq (GroqCloud):</strong> procesamiento de texto para categorizar gastos.</li>
+      <li><strong>Supabase:</strong> almacenamiento en la nube del respaldo de transacciones (opcional).</li>
+      <li><strong>Google (Gmail API):</strong> lectura de notificaciones de Yape / Plin (requiere tu consentimiento explícito).</li>
+    </ul>
+    <p>Ninguno de estos proveedores tiene autorización para usar tu información para sus propios fines comerciales.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 6 -->
+  <div class="section" id="s6">
+    <h2><span class="num">6</span> Seguridad</h2>
+    <ul>
+      <li>Todas las comunicaciones con Supabase y Groq se realizan sobre HTTPS/TLS.</li>
+      <li>El PIN de acceso a la app se almacena cifrado en las preferencias del dispositivo.</li>
+      <li>La app ofrece bloqueo biométrico adicional (huella o reconocimiento facial) como segunda capa.</li>
+      <li>Las claves de API de terceros no se incluyen en el código fuente público; se gestionan como secretos de compilación.</li>
+    </ul>
+    <p>Ningún sistema es 100 % infalible. Te recomendamos mantener tu dispositivo actualizado y no compartir tu PIN con terceros.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 7 -->
+  <div class="section" id="s7">
+    <h2><span class="num">7</span> Tus derechos y control de datos</h2>
+    <ul>
+      <li><strong>Acceso:</strong> puedes ver todos tus datos directamente en la app (historial, categorías, perfil).</li>
+      <li><strong>Eliminación:</strong> desde Ajustes → "Eliminar todos los datos" borras todas las transacciones del dispositivo. Si tienes cuenta en la nube, contacta al correo de soporte para eliminar también el respaldo.</li>
+      <li><strong>Portabilidad:</strong> usa la función de exportación (próximamente) para descargar tus datos en CSV.</li>
+      <li><strong>Revocar acceso a Gmail:</strong> en cualquier momento desde <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 8 -->
+  <div class="section" id="s8">
+    <h2><span class="num">8</span> Menores de edad</h2>
+    <p>TuGasto no está dirigido a menores de 13 años. No recopilamos intencionalmente datos de menores. Si detectamos que un menor ha proporcionado datos, los eliminaremos de inmediato.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 9 -->
+  <div class="section" id="s9">
+    <h2><span class="num">9</span> Cambios a esta política</h2>
+    <p>Podemos actualizar esta política para reflejar cambios en la app o en la legislación aplicable. Cuando lo hagamos, actualizaremos la fecha en el encabezado. Para cambios significativos, notificaremos dentro de la propia aplicación.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- 10 -->
+  <div class="section" id="s10">
+    <h2><span class="num">10</span> Contacto</h2>
+    <p>Si tienes preguntas, solicitudes de eliminación de datos o reportes de incidencias de privacidad, escríbenos a:</p>
+    <div class="highlight-box" style="margin-top:12px;">
+      <p><strong>Correo:</strong> <a href="mailto:maxjuniorsmy@gmail.com">maxjuniorsmy@gmail.com</a></p>
+      <p style="margin-top:6px;"><strong>Desarrollador responsable:</strong> Gordillo Mendoza, Jose Alonzo</p>
+      <p style="margin-top:6px;"><strong>Institución:</strong> Universidad Nacional de San Agustín — Arequipa, Perú</p>
+    </div>
+    <p>Respondemos en un plazo máximo de 7 días hábiles.</p>
+  </div>
+
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <a href="/" class="footer-logo">
+    <svg viewBox="0 0 64 64" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="lg2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#34D9A6"/>
+          <stop offset="1" stop-color="#0E7C63"/>
+        </linearGradient>
+      </defs>
+      <path d="M14 10h36a8 8 0 0 1 8 8v20a8 8 0 0 1-8 8H30l-10 8v-8h-6a8 8 0 0 1-8-8V18a8 8 0 0 1 8-8z" fill="url(#lg2)"/>
+      <path d="M22 26h16M22 33h11" stroke="#fff" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+      <path d="M37 40l4-8 4 5 6-10" stroke="#fff" stroke-width="3.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </a>
+  <div class="links">
+    <a href="/privacidad">Política de Privacidad</a>
+    <a href="/terminos">Términos de Servicio</a>
+    <a href="/">Inicio</a>
+  </div>
+  <p>Universidad Nacional de San Agustín · 2026 — Proyecto académico TuGasto</p>
+</footer>
+
+</body>
+</html>
